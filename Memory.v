@@ -8,14 +8,6 @@ output reg [63:0] dataout
 
 reg [63:0] MEMO[0:255];  
 
-integer i;
-
-initial begin
-  dataout <= 0;
-  for (i = 0; i < 256; i = i + 1) begin
-    MEMO[i] <= i;
-  end
-end
 
 always @(posedge clk)
 begin
