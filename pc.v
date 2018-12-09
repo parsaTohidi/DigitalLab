@@ -6,11 +6,6 @@ input [63:0] oldpc;
 output reg [63:0] newpc;
 always@(posedge clk)
 begin
-	if(w)
-	begin
-		newpc <= oldpc;
-	end
-	else 
 	if(rst)
 	begin
 		newpc<=0;
@@ -19,6 +14,12 @@ begin
 	begin
 		newpc<=newpc+1;
 	end
+	
+	if(w)
+	begin
+		newpc <= oldpc;
+	end
+	else 
 
 		
 end
