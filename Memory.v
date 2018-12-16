@@ -10,7 +10,7 @@ module Memory
   output [63 : 0] DataOut
   );
   
-  reg [63 : 0] Memory [0 : 256];
+     reg [63 : 0] Memory [0 : 255];
   assign DataOut = memRead ? Memory[Address] : {64{1'bz}}; 
   
   always @(posedge clk) begin
