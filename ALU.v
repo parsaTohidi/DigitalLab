@@ -1,14 +1,14 @@
 module alu(
-           input [7:0] firstInput,secondInput,                  
+           input [63:0] firstInput,secondInput,                  
            input [3:0] operation,
-           output [7:0] ALU_Out, 
+           output [63:0] ALU_Out, 
            output CarryOut 
     );
-    reg [7:0] ALU_Result;
-    wire [8:0] tmp;
+           reg [63:0] ALU_Result;
+           wire [64:0] tmp;
     assign ALU_Out = ALU_Result; 
     assign tmp = firstInput + secondInput ;
-    assign CarryOut = tmp[8]; 
+           assign CarryOut = tmp[64]; 
     always @(firstInput, secondInput, operation)
     begin
         case(operation)
