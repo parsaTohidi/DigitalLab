@@ -12,7 +12,7 @@ module alu(
     always @(firstInput, secondInput, operation)
     begin
         case(operation)
-        4'b0000: 
+        4'b0000: base on page 271 of book
            ALU_Result = firstInput + secondInput ; 
         4'b0001: 
            ALU_Result = firstInput - secondInput ;

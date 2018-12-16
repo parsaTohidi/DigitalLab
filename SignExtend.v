@@ -4,7 +4,7 @@ output[63:0] out;
 
 reg[63:0] out;
 wire[31:0] in;
-
+ base on cb-type and d-type and b-type
 always@(in)
 begin
     out[31:0] = in[31:0];
