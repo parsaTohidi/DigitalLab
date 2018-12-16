@@ -6,8 +6,6 @@ module testBench;
    wire myClk = 1;
    integer i;
    reg pc_reset;
-   reg pos = 1'b1;
-   reg neg = 1'b0;
    reg [63:0] add = 4;
    
    
