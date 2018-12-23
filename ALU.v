@@ -26,8 +26,8 @@ module alu(
            ALU_Result = firstInput | secondInput;
           4'b0111: 
            ALU_Result = secondInput;
-          4'b1010: 
-           ALU_Result = firstInput ^ secondInput;
+          4'b1100: 
+           ALU_Result =  ~(firstInput|secondInput);
 
           default: ALU_Result = firstInput + secondInput ; 
         endcase
