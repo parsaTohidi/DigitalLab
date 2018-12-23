@@ -1,5 +1,5 @@
 module control_unit (
-	input[10:0] 	opcode,
+	input[10:0] opcode,
   	output reg reg2Loc,
   	output	reg aluscr,
   	output reg memtoreg,
