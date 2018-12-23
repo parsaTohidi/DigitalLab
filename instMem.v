@@ -7,6 +7,6 @@ module instr_mem (
  	reg [31:0] memory [63:0];
 
 
- 	#delay assign instruction =  memory[outpc];
+        assign #delay instruction =  memory[outpc];
 
 endmodule
