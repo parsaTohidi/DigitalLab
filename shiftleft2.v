@@ -1,11 +1,10 @@
-module shiftleft2 ( shiftin , shiftout );
+module shiftleft2 ( shiftIn , shiftOut );
+      parameter delay = 100;
+      input [63:0] shiftIn;
+      output [63:0] shiftOut;
 
 
-      input [63:0] shiftin;
-      output [63:0] shiftout;
-
-
-          assign shiftout = shiftin >> 2 ;
+          assign #delay shiftOut = shiftIn >> 2 ;
 
 
 endmodule   
