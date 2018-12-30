@@ -1,15 +1,26 @@
-module signExtend(ins, extendedAddress);
+module signExtend(instruction, signExtendOut);
 
-	input [31:0] ins ;
-	output reg [63:0] extendedAddress;
-	
-	wire opcode = ins[31:30]; 
-	
-	always @(*) begin
-		case(opcode) 
-			2'b00: extendedAddress = {{38{ins[25]}} ,ins[25:0] };    //B type
-			2'b10: extendedAddress = {{45{ins[23]}} ,ins[23:5] };	//CB type
-			2'b11: extendedAddress = {{55{ins[20]}} ,ins[20:12] };  //LDUR & STUR
-		endcase
-	end	
+	input [31:0] instruction
+	output reg [63:0] signExtendOut 
+
+always@(instruction)
+begin
+	if (instruction[31:26] == 6'b000101)
+	begin
+        	signExtendOut[25:0] = instruction[25:0];
+        	signExtendOut[63:26] = {38{signExtendOut[25]}};
+	end //B_type
+
+	else if (instruction[31:24] == 8'b10110100)
+	begin 
+        	signExtendOut[19:0] = instruction[23:5];
+        	signExtendOut[63:20] = {44{signExtendOut[19]}};
+	end //CB_type
+ 
+	else 
+	begin 
+        	signExtendOut[9:0] = instruction[20:12];
+        	signExtendOut[63:10] = {54{signExtendOut[9]}};
+    	end //D_type
+end
 endmodule

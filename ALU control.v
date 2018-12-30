@@ -1,4 +1,8 @@
-module ALUControl (ALUOp, instruction, code);
+module ALUControl 
+	#(
+     parameter delay = 100
+         )
+	(ALUOp, ALUOp, instruction, code);
 
     input ALUOp;
     input [31:0] instruction;

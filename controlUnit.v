@@ -1,5 +1,7 @@
-module control_unit (
-	input[10:0] opcode,
+module control_unit 
+	#(parameter delay = 100)	
+	(
+	input[10:0] 	opcode,
   	output reg reg2Loc,
   	output	reg aluscr,
   	output reg memtoreg,
@@ -42,7 +44,7 @@ module control_unit (
 				memread <= 1'b0;
 			  	memwrite <= 1'b1;
 				branch <= 1'b0;
-				aluop <= 2'b00;
+				aluop <= 2'b00;   
 			end
 			11'b10_110_100_xxx: begin // CBZ
 				reg2Loc <= 1'b1	;

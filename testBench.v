@@ -6,6 +6,11 @@ module testBench;
    wire myClk = 1;
    integer i;
    reg pc_reset;
+<<<<<<< HEAD
+   reg pos = 1'b1;
+   reg neg = 1'b0;
+=======
+>>>>>>> b1fb49b65abe1d0c939023e18ac1fe8d346d97d9
    reg [63:0] add = 4;
    
    
@@ -28,4 +33,8 @@ module testBench;
     $display("dataIn = %0d,  dataOut = %0d, newPC = %0d \n", myMem.DataIn, myMem.DataOut);
   end
   
+<<<<<<< HEAD
 endmodule
+=======
+endmodule
+>>>>>>> b1fb49b65abe1d0c939023e18ac1fe8d346d97d9

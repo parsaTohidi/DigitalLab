@@ -1,4 +1,9 @@
-module RegisterBank(clk,
+module RegisterBank
+	#(
+    parameter delay = 100
+	  )
+	
+	(clk,
 	regWrite,
 	readReg1,readReg2,writeReg,
 	writeData,
@@ -9,7 +14,6 @@ module RegisterBank(clk,
 	input[4:0] readReg1,readReg2,writeReg;
 	input[63:0] writeData;
 	output[63:0] RegData1,RegData2;
-	reg[63:0]RegData1,RegData2;
 	reg[63:0]registersArray[31:0];
 	
 

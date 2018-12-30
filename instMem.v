@@ -1,12 +1,12 @@
 module instr_mem (	
 	parameter delay = 100
-        input [5:0] outpc,
+        input [63:0] outpc,
         output reg [31:0] instruction 
          );
 
  	reg [31:0] memory [63:0];
 
 
-        assign #delay instruction =  memory[outpc];
+ 	#delay assign instruction =  memory[outpc];
 
 endmodule

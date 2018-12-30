@@ -1,4 +1,11 @@
-module Adder(input[63:0] a,input [63:0] b,output[63:0] out);
-	parameter delay = 100
-	assign #delay out = a+b ;
-endmodule 
+module adder 
+( cin , a, b , s, cout);
+
+	input cin;
+	input [63:0] b;
+	input [63:0] a ;
+	output cout;
+	output [63:0] s;
+
+	assign {cout, s} = a + b + cin;
+endmodule

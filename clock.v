@@ -1,7 +1,8 @@
 module oc(output reg clk);
+parameter delay = 100
 always@(*)
 begin 
-	#100 clk = 1;
-	#100 clk = 0;
+	#delay clk = 1;
+	#delay clk = 0;
 end 
 endmodule 
